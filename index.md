@@ -1,11 +1,11 @@
 ---
-title: Oshiire 法的文書
+title: OshiLog 法的文書
 permalink: /
 ---
 
-# Oshiire 法的文書
+# OshiLog 法的文書
 
-iOS アプリ「Oshiire」の法的文書です。
+iOS アプリ「OshiLog」の法的文書です。
 
 - [プライバシーポリシー](/oshiire-legal/privacy)
 - [利用規約](/oshiire-legal/terms)
