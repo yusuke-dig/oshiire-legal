@@ -1,0 +1,150 @@
+---
+# この front matter（空）が無いと Jekyll は SCSS を処理しません。
+---
+
+@import "{{ site.theme }}";
+
+/* ===== オシイレ ブランドトークン ===== */
+:root {
+  --teal: #0F8B98;
+  --teal-dark: #0B6B75;
+  --ink: #071925;
+  --ink-2: rgba(7, 25, 37, 0.66);
+  --surface: #FEFBF8;
+  --bg: #E8F8F8;
+  --outline: rgba(7, 25, 37, 0.12);
+  --coral: #FA8070;
+}
+
+/* ===== 全体 ===== */
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.8;
+}
+
+/* ===== ヘッダー（teal の細い帯・グラデーション無し） ===== */
+.page-header {
+  background-color: var(--teal);
+  background-image: none;
+  color: #fff;
+  padding: 2.4rem 1rem 3rem;
+  text-align: center;
+}
+.page-header .project-name {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0;
+  font-size: 1.9rem;
+}
+.page-header .project-tagline {
+  opacity: 0.92;
+  font-weight: 500;
+  margin: 0.4rem 0 0;
+}
+/* ヘッダー内のボタン類（テーマ既定の View on GitHub 等）は隠す */
+.page-header .btn { display: none; }
+
+/* ===== 本文カード ===== */
+.main-content {
+  max-width: 720px;
+  margin: -1.6rem auto 2.5rem;
+  background: var(--surface);
+  padding: 2.2rem clamp(1.1rem, 5vw, 2.6rem);
+  border: 1px solid var(--outline);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(7, 25, 37, 0.05), 0 10px 34px rgba(7, 25, 37, 0.07);
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.main-content h1 {
+  font-weight: 800;
+  color: var(--ink);
+  border-bottom: 0;
+  margin-top: 0.2rem;
+  font-size: 1.7rem;
+}
+.main-content h2 {
+  font-weight: 700;
+  color: var(--teal);
+  margin-top: 2.4rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--outline);
+  font-size: 1.25rem;
+}
+.main-content h3 {
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 1.6rem;
+  font-size: 1.05rem;
+}
+.main-content a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.main-content a:hover { color: var(--teal-dark); }
+.main-content strong { color: var(--ink); font-weight: 700; }
+.main-content hr { border-color: var(--outline); }
+
+/* 制定日・改定日の冒頭メタ行を控えめに */
+.main-content > h1 + p {
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+/* ===== index：カード風リンク ===== */
+.doc-cards {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.6rem 0 0.5rem;
+}
+.doc-card {
+  display: block;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--outline);
+  border-radius: 12px;
+  background: #fff;
+  text-decoration: none !important;
+  color: var(--ink) !important;
+  transition: border-color 0.15s ease, transform 0.05s ease;
+}
+.doc-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-1px);
+}
+.doc-card .doc-card__title {
+  font-weight: 700;
+  color: var(--teal);
+  font-size: 1.05rem;
+}
+.doc-card .doc-card__desc {
+  color: var(--ink-2);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+/* ===== フッター ===== */
+.site-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  border-top: 1px solid var(--outline);
+  color: var(--ink-2);
+  font-size: 0.85rem;
+}
+
+/* ===== モバイル：カードを全幅・角丸オフで密着 ===== */
+@media (max-width: 42em) {
+  .main-content {
+    margin: 0;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    box-shadow: none;
+  }
+  .page-header { padding-bottom: 2.4rem; }
+}
